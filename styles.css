@@ -1,91 +1,110 @@
 body {
-  display: flex;
-  justify-content: center;
   background: var(--very-light-gray);
-  color: var(--very-dark-blue);
 }
-
 .container {
-  background: var(--very-light-gray);
-  width: 90%;
-  margin: 0 auto;
-}
-
-.header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 60px 20px;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 200;
+  color: var(--very-dark-blue);
 }
 
 .header h1 {
+  font-size: 20px;
   font-weight: 200;
-  font-size: 27px;
 }
 
 .header h2 {
   font-weight: 600;
-  font-size: 27px;
+  font-size: 20px;
 }
 
 .header p {
-  font-weight: 200;
-  text-align: center;
+  font-size: 13px;
+  margin: 10px 0 40px;
+  color: var(--grayish-blue);
+  max-width: 450px;
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 950px;
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    justify-content: center;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card.card-supervisor {
+    transform: translateY(60%);
+    margin-right: 25px;
+  }
+
+  .card.card-karma {
+    order: 1;
+    margin-top: 15px;
+  }
+
+  .card.card-calculator {
+    transform: translateY(60%);
+    margin-left: 25px;
+  }
 }
 
 .cards-container .card {
-  border-radius: 6px;
-  padding: 20px;
-  margin: 10px;
-  width: 250px;
   background: white;
-  box-shadow: -1px 10px 23px 0 rgba(0, 0, 0, 0.15);
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 1px 10px 23px 0 var(--grayish-blue);
+  border-radius: 5px;
 }
 
-.cards-container .card h1 {
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  font-size: 16px;
   color: var(--very-dark-blue);
   font-weight: 600;
 }
 
-.cards-container .card p {
+.card p {
   color: var(--grayish-blue);
   font-size: 12px;
-  margin: 10px auto;
+  margin: 5px 0 20px;
   font-weight: 200;
+  padding-right: 10px;
 }
 
-.cards-container .card img {
-  display: block;
+.card img {
   margin-left: auto;
-  margin-top: 10px;
+  width: 60px;
 }
 
-.cards-container .card-supervisor {
+.card.card-supervisor {
   border-top: 4px solid var(--cyan);
 }
 
-.cards-container .card-team-builder {
+.card.card-team-builder {
   border-top: 4px solid var(--red);
 }
 
-.cards-container .card-karma {
+.card.card-karma {
   border-top: 4px solid var(--orange);
 }
 
-.cards-container .card-calculator {
+.card.card-calculator {
   border-top: 4px solid var(--blue);
-}
-
-@media (min-width: 1033px) {
-  .cards-container .card-supervisor,
-  .card-karma {
-    transform: translateY(55%);
-  }
 }
